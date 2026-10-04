@@ -71,7 +71,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 30px;font:600 22px Caveat,cu
 <footer>Lucha · Esperanza · Paz</footer>
 <script>
 /* Pega aquí el enlace de tu Google Forms (deja las comillas) */
-const FORMULARIO_URL = "";
+const FORMULARIO_URL = "https://docs.google.com/forms/d/e/1FAIpQLScB1Mw-eijZQnGB6vyWtzmHELcSbw91TyoKucI7Pq_79hzFxw/viewform?usp=publish-editor";
 
 /* Copia de respaldo del inventario: se usa solo si no se puede leer libros.csv.
    Formato: [título, categoría, ubicación, ejemplares, prestados] */
@@ -101,7 +101,7 @@ function render(){
 }
 function sugerencia(n){
   $("sugT").innerHTML=n?"<b>¿No está el que buscas?</b><br>Cuéntanos qué libro te gustaría leer y lo tendremos en cuenta.":"<b>¿Quieres que tengamos otro libro?</b><br>Escríbenos cuál y lo tendremos en cuenta.";
-  const a=$("sugA");a.href=FORMULARIO_URL||"https://docs.google.com/forms/d/e/1FAIpQLScB1Mw-eijZQnGB6vyWtzmHELcSbw91TyoKucI7Pq_79hzFxw/viewform?usp=publish-editor";
+  const a=$("sugA");a.href=FORMULARIO_URL||"#";
   a.onclick=e=>{if(!FORMULARIO_URL){e.preventDefault();alert("Falta pegar el enlace del formulario en FORMULARIO_URL.")}}}
 $("q").addEventListener("input",render);
 $("disp").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;disp=c.dataset.f;
